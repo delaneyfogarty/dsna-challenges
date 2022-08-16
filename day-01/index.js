@@ -59,4 +59,19 @@ function filter(arr, predicate) {
   }
   return newArray;
 }
-module.exports = { push, pop, unshift, shift, hasDuplicates, filter };
+
+const addPunctuation = (punctuation) => (phrase) => phrase + punctuation;
+// add x to the end of a given string
+// y = '';
+// newString = y[y.length] + x;
+// return newString;
+
+module.exports = {
+  push,
+  pop,
+  unshift,
+  shift,
+  hasDuplicates,
+  filter,
+  addPunctuation,
+};

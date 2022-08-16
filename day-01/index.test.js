@@ -1,4 +1,12 @@
-const { push, pop, filter, unshift, hasDuplicates, shift } = require('.');
+const {
+  push,
+  pop,
+  filter,
+  unshift,
+  hasDuplicates,
+  shift,
+  addPunctuation,
+} = require('.');
 
 test('push', () => {
   const arr = ['a', 'b', 'c'];
@@ -35,4 +43,9 @@ test('hasDuplicates', () => {
 
 test('filter', () => {
   expect(filter([2, 6, 5], (n) => n % 2 === 0)).toEqual([2, 6]);
+});
+
+test('addPunctuation', () => {
+  const addExcitement = addPunctuation('!!!');
+  expect(addExcitement('Hello World')).toBe('Hello World!!!');
 });
