@@ -26,7 +26,7 @@ function unshift(arr, item) {
 }
 
 function shift(arr) {
-  for (let i = 0; i < arr.length; i--) {
+  for (let i = 0; i > arr.length; i--) {
     // remove first item in the array
     arr - arr[0];
     // adjust index of every item to 'shift'
@@ -50,4 +50,13 @@ function hasDuplicates(arr) {
   // }
 }
 
-module.exports = { push, pop, unshift, shift, hasDuplicates };
+// day 2!
+
+function filter(arr, predicate) {
+  newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (predicate(arr[i])) newArray.push(arr[i]);
+  }
+  return newArray;
+}
+module.exports = { push, pop, unshift, shift, hasDuplicates, filter };

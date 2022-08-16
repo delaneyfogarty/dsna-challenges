@@ -1,4 +1,4 @@
-const { push, pop, unshift, shift, hasDuplicates } = require('.');
+const { push, pop, filter, unshift, hasDuplicates, shift } = require('.');
 
 test('push', () => {
   const arr = ['a', 'b', 'c'];
@@ -20,7 +20,7 @@ test('unshift', () => {
 });
 
 test('shift', () => {
-  arr = [1, 2, 3, 4];
+  const arr = [1, 2, 3, 4];
   expect(shift(arr)).toBe(1);
 });
 
@@ -29,4 +29,10 @@ test('hasDuplicates', () => {
   arr2 = ['d', 'f', 'o', 'd'];
   expect(hasDuplicates(arr1)).toBe(false);
   expect(hasDuplicates(arr2)).toBe(true);
+});
+
+// day 2!
+
+test('filter', () => {
+  expect(filter([2, 6, 5], (n) => n % 2 === 0)).toEqual([2, 6]);
 });
