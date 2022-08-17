@@ -61,10 +61,45 @@ function filter(arr, predicate) {
 }
 
 const addPunctuation = (punctuation) => (phrase) => phrase + punctuation;
-// add x to the end of a given string
-// y = '';
-// newString = y[y.length] + x;
-// return newString;
+
+function map(arr, callback) {
+  const newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    const transformed = callback(arr[i]);
+    newArray.push(transformed);
+  }
+  return newArray;
+}
+
+function repeat(txt, n) {
+  // if n is less than 0, return an empty string
+  if (n < 0) return '';
+  // if n is equal to 1, return the given txt
+  if (n === 1) return txt;
+  // else return the text plus the txt times one less than n since the initial text counts as one of the numbers of n
+  else return txt + repeat(txt, n - 1);
+  //if the number of times the string is repeated  does not equal n, then keep going
+}
+
+function largestEven(arr) {
+  let newArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    // console.log('newArray', newArray);
+    if (arr[i] % 2 === 0) {
+      newArray.push(arr[i]);
+    }
+  }
+  if (newArray.length === 0) {
+    return -1;
+  } else {
+    console.log('newArray', newArray);
+    // return largestEven(newArray);
+    const largestNumber = Math.max(...newArray);
+    // console.log('sortedArray', sortedArray);
+    return largestNumber;
+  }
+}
 
 module.exports = {
   push,
@@ -74,4 +109,7 @@ module.exports = {
   hasDuplicates,
   filter,
   addPunctuation,
+  map,
+  repeat,
+  largestEven,
 };
