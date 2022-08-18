@@ -37,18 +37,29 @@ function shift(arr) {
 }
 
 function hasDuplicates(arr) {
-  // declare an empty obj
-  // let obj = {};
-  // // loop over the array
-  // for (let i = 0; i < arr.length; i++) {
-  //   if (obj[arr[i]]) {
-  //     return true;
-  //     break;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+  let alreadySeen = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let value = arr[i];
+    if (alreadySeen.indexOf(value) !== -1) {
+      return true;
+    }
+    alreadySeen.push(value);
+  }
+  return false;
 }
+
+// declare an empty obj
+// let obj = {};
+// // loop over the array
+// for (let i = 0; i < arr.length; i++) {
+//   if (obj[arr[i]]) {
+//     return true;
+//     break;
+//   } else {
+//     return false;
+//   }
+// }
 
 // day 2!
 
@@ -81,24 +92,29 @@ function repeat(txt, n) {
   //if the number of times the string is repeated  does not equal n, then keep going
 }
 
-function largestEven(arr) {
-  let newArray = [];
+// function largestEven(arr) {
+//   let newArray = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    // console.log('newArray', newArray);
-    if (arr[i] % 2 === 0) {
-      newArray.push(arr[i]);
-    }
-  }
-  if (newArray.length === 0) {
-    return -1;
-  } else {
-    console.log('newArray', newArray);
-    // return largestEven(newArray);
-    const largestNumber = Math.max(...newArray);
-    // console.log('sortedArray', sortedArray);
-    return largestNumber;
-  }
+//   for (let i = 0; i < arr.length; i++) {
+//     // console.log('newArray', newArray);
+//     if (arr[i] % 2 === 0) {
+//       newArray.push(arr[i]);
+//     }
+//   }
+//   if (newArray.length === 0) {
+//     return -1;
+//   } else {
+//     console.log('newArray', newArray);
+//     const largestNumber = Math.max(...newArray);
+//     return largestNumber;
+//   }
+// }
+
+function largestEven(arr, maxEven = -1) {
+  if (!arr.length) return maxEven;
+  const num = arr.pop();
+  if (num % 2 === 0 && num > maxEven) maxEven = num;
+  return largestEven(arr, maxEven);
 }
 
 module.exports = {
