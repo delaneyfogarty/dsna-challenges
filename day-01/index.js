@@ -49,18 +49,6 @@ function hasDuplicates(arr) {
   return false;
 }
 
-// declare an empty obj
-// let obj = {};
-// // loop over the array
-// for (let i = 0; i < arr.length; i++) {
-//   if (obj[arr[i]]) {
-//     return true;
-//     break;
-//   } else {
-//     return false;
-//   }
-// }
-
 // day 2!
 
 function filter(arr, predicate) {
@@ -92,6 +80,7 @@ function repeat(txt, n) {
   //if the number of times the string is repeated  does not equal n, then keep going
 }
 
+// non-recursive method
 // function largestEven(arr) {
 //   let newArray = [];
 
